@@ -1,0 +1,59 @@
+---
+title: "Homework 4"
+author: "Claire Hemingway"
+date: "September 29, 2016"
+output: html_document
+---
+Problem 1
+
+Every Saturday, at the same time, a primatologist goes and sits in the forest in the morning and listens for titi monkey calls, counting the number of calls they hear in a 2 hour window from 5am to 7am. Based on previous knowledge, she believes that the mean number calls she will hear in that time is exactly 15. Let $X$ represent the appropriate Poisson random variable of the number of calls heard in each monitoring session.
+
+a. what is the probability that she will hear more than 8 calls during any given session?
+
+```{r}
+proba<-(1-ppois(7, lambda =15))
+proba
+```
+b. what is the probability that she will hear no calls in a session?
+
+```{r}
+probb<-dpois(0, lambda=15)
+probb
+```
+
+c. what is the probability that she will hear exactly 3 calls in a session?
+
+```{r}
+probc<-dpois(3, lambda=15)
+probc
+```
+
+d. plot the relevant Poisson mass function over the values in range 0 (less than or equal to) $X$ (less than or equal to 30).
+
+```{r}
+x<- 0:30
+dataset<-dpois(x, lambda = 15)
+barplot(dataset, names.arg=x, space=0, xlab="x", ylab="P(x)", main="Probability Mass Function: Primate Calls")
+```
+
+e. simulate 104 result from this distributio (i.e., 2 years of Saturday monitoring session)
+
+```{r}
+saturdayses<-rpois(104, lambda=15)
+saturdayses
+```
+
+f. plot the simulated result using hist() and use xlim() to set the horizonal limits to be from 0 to 30. How does your histogram compare to the shape of the probability mass function you plotted above?
+
+```{r}
+hist(saturdayses, xlim=c(0,30))
+```
+
+as we increase the number of samples we would expect that it would conform to the shape of our Poisson mass function.
+
+Here is an example of the same thing with 1000 observations now:
+
+```{r}
+saturdayses<-rpois(1000, lambda=15)
+hist(saturdayses, xlim=c(0,30))
+```

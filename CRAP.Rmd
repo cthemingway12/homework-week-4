@@ -21,6 +21,8 @@ knitr::opts_chunk$set(
 
 ## Overview
 
+HEllo
+
 Let's return to the concepts of **error** and **power**. Recall that Type I error occurs when you **incorrectly reject a true $H_0$**. In any given hypothesis test, the probability of a Type I error is equivalent to the significance level, $\alpha$, and it is this type of error we are often trying to minimize when we are doing classical statistical inference. Type II error occurs when you **incorrectly fail to reject a false $H_0$** (in other words, fail to find evidence in support of a true $H_A$). Since we do not know what the true $H_A$ actually is, the probability of committing such an error, labeled $\beta$, is not usually known in practice.
 
 | What is True | What We Decide | Result                                     |
